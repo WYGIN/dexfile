@@ -418,14 +418,10 @@ PROC [ <proc_options>... ] <expression>
 ### Example
 
 ```dockerfile
-CTR hello-world
-    CTR hello-dexfile
-        # execute process in `hello-dexfile` container
-        PROC echo "hello dexfile!"
-        # execute process in `hello-world` container
-        PROC --from="hello-world" echo "hello world!"
-    ENDCTR
-ENDCTR
+# execute process in `default` container
+PROC echo "hello dexfile!"
+# execute process in `hello-world` container
+PROC --from="hello-world" echo "hello world!"
 ```
 
 ## BUILD
